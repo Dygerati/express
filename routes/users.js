@@ -35,8 +35,6 @@
 				users = results[1],
 				lastPage = (page + 1) * maxUsersPerPage >= count;
 
-			console.log("users:", users);
-
 			res.render('users/index', {
  				title: "New User",  
  				users: users,
@@ -60,7 +58,7 @@
  	});
 
  	app.post('/users', notLoggedIn, function(req, res, next) {
-		console.log(req.body);
+
 		User.create(req.body, function(err) {
 			if(err) {
 				if(err.code === 11000) {

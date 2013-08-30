@@ -6,14 +6,12 @@ block content
 	p
 		a(href="/users/new") Create new profile
 
-	- var test = {test: 123};
-	p= test.test
 
 	ul
-		each user in users
+		each doc in users
+			- var user = doc._doc;
 			li 
-				p= user
-				<!--a(href="/users/" + encodeURIComponent(users[user].username)) users[user].name-->
+				a(href="/users/" + encodeURIComponent(user.username))= user.name
 
 	- if (page > 0) {
 		a(href="?page=" + (page - 1)) Previous

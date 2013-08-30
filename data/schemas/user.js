@@ -6,3 +6,5 @@ var UserSchema = new mongoose.Schema({
 	password: String,
 	bio: String
 });
+
+module.exports = UserSchema;
